@@ -25,7 +25,10 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authSrv.onLogin(this.user).then(res =>{
-      this.router.navigate(['/quien-soy']);
+      if(res?.user != null)
+      this.router.navigate(['/home']);
+      else
+      this.router.navigate(['/error'])
     });
   }
 
