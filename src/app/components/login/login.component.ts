@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../classes/user';
 import { Router } from '@angular/router';
+import { LoginLogService } from 'src/app/services/login-log.service';
 
 
 
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authSrv : AuthService,
+    private logSrv: LoginLogService,
     private router : Router
   ) { }
 
@@ -25,8 +27,13 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authSrv.onLogin(this.user).then(res =>{
-      if(res?.user != null)
-      this.router.navigate(['/home']);
+      if(res?.user != null){ 
+        this.logSrv.createElement({
+        usuario:this.user.email,
+        fecha:Date.now()      
+       });
+       this.router.navigate(['/home']);
+      }
       else
       this.router.navigate(['/error'])
     });
