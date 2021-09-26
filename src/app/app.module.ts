@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { QuienSoyComponent } from './components/quien-soy/quien-soy.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HomeComponent,
     QuienSoyComponent,
     RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

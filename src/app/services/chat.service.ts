@@ -21,40 +21,34 @@ export interface Message {
 
 
 export class ChatService {
-
-  
-
-  usuario: any = localStorage.getItem("usuario");
-  id: any = localStorage.getItem("id");
-  currentUser: User = new User();
  
-  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore, private user :User) {
+  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) {
     
   }
 
  
   // TODO Chat functionality
-  addChatMessage(msg:any,colection:any) {
-    let fecha = new Date().getTime();
-    return this.afs.collection(colection).add({
+  addChatMessage(msg:any,user:User) {
+    let fecha = new Date();
+    return this.afs.collection('message').add({
       msg: msg,
-      from: this.id,
-      fromName: this.usuario,
+      from: user.email,
+      fromName: user.email,
       createdAt: fecha
     });
   }
    
-  getChatMessages(collection:any) {
+  getChatMessages(user:User) {
     let users = [];
     return this.getUsers().pipe(
       switchMap(res => {
         users = res;
-        return this.afs.collection(collection, ref => ref.orderBy('createdAt')).valueChanges({ idField: 'id' }) as Observable<Message[]>;
+        return this.afs.collection('message', ref => ref.orderBy('createdAt')).valueChanges({ idField: 'id' }) as Observable<Message[]>;
       }),
       map(messages => {
         // Get the real name for each user
         for (let m of messages) {
-          m.myMsg = this.id === m.from;
+          m.myMsg = user.email === m.from;
         }        
         return messages
       })

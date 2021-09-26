@@ -27,10 +27,11 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authSrv.onLogin(this.user).then(res =>{
+      let fecha = new Date();
       if(res?.user != null){ 
         this.logSrv.createElement({
         usuario:this.user.email,
-        fecha:Date.now()      
+        fecha: fecha
        });
        this.router.navigate(['/home']);
       }
