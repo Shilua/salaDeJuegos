@@ -21,12 +21,11 @@ export class ChatComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.authSvc.getCurrentUser().then((response:any)=>{
-      console.log(response.email);
-      this.user.email = response.email;
-      this.user.uid = response.email;
-    });
-    this.messages = this.chatSvc.getChatMessages(this.user);
+      let email = JSON.stringify(localStorage.getItem('email'));
+      console.log(email);
+      this.user.email = email;
+      this.user.uid = email;
+      this.messages = this.chatSvc.getChatMessages(this.user);
   }
 
   sendMessage() {

@@ -16,12 +16,12 @@
 }
  
 .my-message {
-    background: var(--ion-color-tertiary);
-    color: #fff;
+    background-color: rgba(223, 72, 72, 0);
+    color: rgb(0, 0, 0);
 }
  
 .other-message {
-    background: var(--ion-color-secondary);
+    background: rgba(223, 72, 72, 0);
     color: #fff;
 }
  

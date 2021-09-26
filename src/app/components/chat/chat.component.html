@@ -1,10 +1,23 @@
+<app-navbar></app-navbar>
 <div *ngFor="let message of messages | async">
     <div class="message"
-    offset]="message.myMsg ? 3 : 0"
-    [ngClass]="{ 'my-message': message.myMsg, 'other-message': !message.myMsg }">
+    class="my-message">
         <b *ngIf="!message.myMsg">{{ message.fromName }}</b><br>
         <span>{{ message.msg }}
-        <div class="time ion-text-right"><br>{{ message.createdAt?.toMillis() | date:'short' }}</div>
+        <div class="time"><br>{{ message.createdAt?.toMillis() | date:'short' }}</div>
         </span>
+    </div>
+</div>
+<div>
+    <div>
+        <div>
+            <textarea autoGrow="true" class="message-input" rows="1" maxLength="500" [(ngModel)]="newMsg"></textarea>
+        </div>
+        <div>
+            <button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''"
+            class="msg-btn" (click)="sendMessage()">
+                enviar
+            </button>
+        </div>
     </div>
 </div>

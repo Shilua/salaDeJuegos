@@ -11,7 +11,10 @@ export class HomeComponent implements OnInit {
   constructor(private authSvc: AuthService) { }
 
   ngOnInit(): void {
-    
+    this.authSvc.getCurrentUser().then((response:any)=>{
+      console.log(response.email);
+      localStorage.setItem('email',response.email);
+    });
   }
 
 }
