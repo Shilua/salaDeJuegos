@@ -1,4 +1,4 @@
-<app-navbar [ruta]="'home'" ></app-navbar>
+<app-navbar [ruta]="'juegos'" ></app-navbar>
 <div class="container container-card">
     <div class="row">
         <div class="col-md-4 align-self-center">
@@ -7,9 +7,9 @@
                 <img src="../../../assets/img/games.svg" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Juegos</h5>
-                  <p class="card-text">Listado de juegos disponibles.</p>
-                  <a (click)="juegos()" class="btn btn-danger">Acceder</a>
+                  <h5 class="card-title">Ahorcado</h5>
+                  <p class="card-text">adivina la palabra antes de ser ahorcado.</p>
+                  <a (click)='ahorcado()' class="btn btn-danger">Acceder</a>
                 </div>
               </div>
         </div>
@@ -19,9 +19,9 @@
                 <img src="../../../assets/img/puntuaciones.svg" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Puntuaciones</h5>
-                  <p class="card-text">Puntuaciones de los usuarios.</p>
-                  <a href="#" class="btn btn-danger">Acceder</a>
+                  <h5 class="card-title">Mayor o menor</h5>
+                  <p class="card-text">adivina si el siguiente numero es mayor o menor.</p>
+                  <a (click)='mayorOMenor()' class="btn btn-danger">Acceder</a>
                 </div>
               </div>
         </div>

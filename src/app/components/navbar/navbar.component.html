@@ -6,13 +6,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item" ngClass="">
-          <a class="nav-link" href="/home">Home</a>
+          <a class="nav-link" (click)='home()'>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/chat">chat</a>
+          <a class="nav-link" (click)='chat()'>chat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/quien-soy">Quien soy</a>
+          <a class="nav-link" (click)='quienSoy()'>Quien soy</a>
         </li>
       </ul>
       <button  class="btn btn-danger ml-auto" (click)="logOut()">Log Out</button>

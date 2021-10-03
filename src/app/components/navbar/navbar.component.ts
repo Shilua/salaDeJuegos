@@ -16,8 +16,22 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
   logOut(){
+    this.auth.isLogged = false;
     this.auth.logout();
     this.router.navigate(['/']);
+  }
+
+  home(){
+    this.router.navigate(['home']);
+  }
+
+  chat(){
+    this.router.navigate(['chat']);
+  }
+
+  quienSoy(){
+    this.router.navigate(['quien-soy']);
+
   }
 
 }

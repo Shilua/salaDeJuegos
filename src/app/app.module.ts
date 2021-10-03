@@ -17,6 +17,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { AhorcadoComponent } from './components/games/ahorcado/ahorcado.component';
+import { JuegosComponent } from './components/games/juegos/juegos.component';
+import { MenuCardComponent } from './components/menu-card/menu-card.component';
+import { MayorOMenorComponent } from './components/mayor-o-menor/mayor-o-menor.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { AhorcadoComponent } from './components/games/ahorcado/ahorcado.componen
     RegisterComponent,
     NavbarComponent,
     ChatComponent,
-    AhorcadoComponent
+    AhorcadoComponent,
+    JuegosComponent,
+    MenuCardComponent,
+    MayorOMenorComponent
   ],
   imports: [
     BrowserModule,

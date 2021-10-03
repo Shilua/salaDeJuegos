@@ -8,7 +8,6 @@ import { User } from '../classes/user';
   providedIn: 'root'
 })
 export class AuthService {
-
   public isLogged: any = false;
   constructor(
     public afAuth: AngularFireAuth,
